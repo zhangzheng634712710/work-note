@@ -1,0 +1,4 @@
+1、使用创龙提供的sdk进行编译，当编译到文件系统时失败，原因是windows wsl（ubuntu-20.04）启动时PATH路径带了Windows的系统路径（中间有空格），linux系统下的PATH不带空格。
+    解决办法：在wsl /etc/wsl.conf配置文件中增加两行配置（去掉windows系统的PATH路径）就可以了。
+        [interop]
+        appendWindowsPath = false
